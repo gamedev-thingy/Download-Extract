@@ -1,0 +1,31 @@
+name: "Download & Extract"
+description: "Downloads and extracts the file"
+
+branding:
+  icon: "download"
+  color: "green"
+ 
+inputs:
+  url:
+    description: "The URL to download from"
+    required: true
+  destination:
+    description: "Where the files will be extracted to"
+    required: true
+  ZIPname:
+    description: "Name of the downloaded ZIP file"
+    required: true
+runs:
+  using "composite"
+  steps:
+    - name: Download
+      shell: powershell
+      run: Invoke-WebRequest -Uri "${{inputs.url}}" - OutFile "${{inputs.destination}}"
+    - name: Unzip
+      shell: cmd
+      run: |
+        cd ${{inputs.destination}}
+        7z x -y ${{ZIPname}}.zip
+        del ${{ZIPname}}.zip
+       
+      
