@@ -25,7 +25,7 @@ runs:
       shell: cmd
       run: |
         cd ${{inputs.destination}}
-        7z x -y ${{ZIPname}}.zip
-        del ${{ZIPname}}.zip
+        7z x -y ${{inputs.ZIPname}}.zip
+        del ${{inputs.ZIPname}}.zip
        
       
