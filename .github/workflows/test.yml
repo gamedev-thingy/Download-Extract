@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Download SDL2
-        uses: gamedev-thingy/Download-Extract@v1.4
+        uses: gamedev-thingy/Download-Extract@v2
         with:
           url: "https://libsdl.org/release/SDL2-devel-2.0.16-VC.zip"
           destination: .
