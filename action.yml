@@ -20,7 +20,7 @@ runs:
   steps:
     - name: Download
       shell: powershell
-      run: Invoke-WebRequest -Uri "${{inputs.url}}" - OutFile "${{inputs.destination}}"
+      run: Invoke-WebRequest -Uri "${{inputs.url}}" - OutFile "${{inputs.destination}}.zip"
     - name: Unzip
       shell: cmd
       run: |
