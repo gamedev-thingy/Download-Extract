@@ -16,7 +16,7 @@ inputs:
     description: "Name of the downloaded ZIP file"
     required: true
 runs:
-  using "composite"
+  using: "composite"
   steps:
     - name: Download
       shell: powershell
