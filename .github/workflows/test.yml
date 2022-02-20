@@ -1,0 +1,20 @@
+name: "Test"
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Make Dirs
+        shell: cmd
+        run: mkdir bin
+      
+      - name: Download SDL2
+        uses: gamedev-thingy/Download-Extract@latest
+        with:
+          url: "https://libsdl.org/release/SDL2-devel-2.0.16-VC.zip"
+          destination: .
+          ZIPname: SDL2-devel-2.0.16-VC
